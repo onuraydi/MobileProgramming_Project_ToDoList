@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="16dp"
+    app:cardBackgroundColor="@color/card_white"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="12dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/checkboxYapildi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/primary_blue"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:layout_marginEnd="12dp"/>
+
+        <TextView
+            android:id="@+id/txtGorevMetni"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gorev"
+            android:textColor="@color/text_primary"
+            android:textSize="17sp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <ImageButton
+            android:id="@+id/btnSil"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_delete_"
+            app:tint="#FFCDD2"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="Sil" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
