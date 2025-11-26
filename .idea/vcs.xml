@@ -2,7 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/MobileProgramming_Project_ToDoList" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/mobileprogramming_App_ToDoList" vcs="Git" />
   </component>
 </project>

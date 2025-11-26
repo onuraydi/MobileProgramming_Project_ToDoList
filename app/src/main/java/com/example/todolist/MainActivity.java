@@ -6,6 +6,8 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
+// Toast kütüphanesini ekledik
+import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -27,9 +29,8 @@ public class MainActivity extends AppCompatActivity {
         fabEkle = findViewById(R.id.fabEkle);
 
         gorevListesi = new ArrayList<>();
-
         gorevListesi.add(new Gorev("Markete git", false));
-        gorevListesi.add(new Gorev("Java çalış", true)); // Bu baştan çizili gelir
+        gorevListesi.add(new Gorev("Java çalış", true));
 
         customAdapter = new GorevAdapter(this, gorevListesi);
         listView.setAdapter(customAdapter);
@@ -60,9 +61,7 @@ public class MainActivity extends AppCompatActivity {
         input.setBackgroundResource(R.drawable.bg_input_rounded);
         input.setPadding(50, 40, 50, 40);
         input.setLayoutParams(params);
-
         input.setTextColor(android.graphics.Color.parseColor("#263238"));
-
         input.setHintTextColor(android.graphics.Color.parseColor("#90A4AE"));
 
         container.addView(input);
@@ -72,9 +71,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String metin = input.getText().toString();
+
+                // Eğer metin boş değilse ekle ve Başarılı mesajı ver
                 if (!metin.isEmpty()) {
                     gorevListesi.add(new Gorev(metin, false));
                     customAdapter.notifyDataSetChanged();
+
+                    // --- BAŞARILI TOAST MESAJI ---
+                    Toast.makeText(MainActivity.this, "Yeni görev eklendi!", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    // --- UYARI TOAST MESAJI (Boş ise) ---
+                    Toast.makeText(MainActivity.this, "Lütfen bir görev yazın!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
